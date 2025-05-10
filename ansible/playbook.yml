@@ -1,0 +1,15 @@
+---
+- name: My First Ansible Playbook
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Create hello.txt file
+      copy:
+        dest: /home/caty/hello.txt
+        content: "Ansible setup is working! 🎉"
+
+    - name: Install tree
+      apt:
+        name: tree
+        state: present
+
